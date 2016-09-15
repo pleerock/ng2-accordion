@@ -7,6 +7,6 @@
     "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#7a3ca1f0b8a0960af9fc1838f3234cc9d6ce0645"
   },
   "globalDependencies": {
-    "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2",
+    "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2"
   }
 }
