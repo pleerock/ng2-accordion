@@ -1,11 +1,11 @@
-import {Component, Input, Host, forwardRef, Inject, ContentChild, ElementRef} from "@angular/core";
+import {Component, Input, Host, forwardRef, Inject, ContentChild, ElementRef, HostBinding} from "@angular/core";
 import {Accordion} from "./Accordion";
 import {AccordionToggle} from "./AccordionToggle";
 
 @Component({
     selector: "accordion-group",
+    styles: [":host { display: block; }"],
     template: `
-  <div class="panel panel-default">
     <div class="panel-heading" role="tab" (click)="checkAndToggle()">
       <h4 class="panel-title">
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
@@ -21,10 +21,14 @@ import {AccordionToggle} from "./AccordionToggle";
         <ng-content></ng-content>
       </div>
     </div>
-  </div>
 `
 })
 export class AccordionGroup {
+
+    // static stuff
+    @HostBinding("class")
+    classes = "panel panel-default";
+
 
     @Input()
     heading: string;

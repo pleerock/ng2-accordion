@@ -1,15 +1,23 @@
-import {ContentChildren, Component, QueryList, Input, forwardRef, AfterContentInit} from "@angular/core";
+import {ContentChildren, Component, QueryList, Input, forwardRef, AfterContentInit, HostBinding} from "@angular/core";
 import {AccordionGroup} from "./AccordionGroup";
 
 @Component({
     selector: "accordion",
-    template: `
-<div class="panel-group" role="tablist" aria-multiselectable="true">
-    <ng-content></ng-content>
-</div>
-`
+    styles: [":host{ display: block }"],
+    template: "<ng-content></ng-content>"
 })
 export class Accordion implements AfterContentInit {
+
+    // static stuff
+    @HostBinding("attr.aria-multiselectable")
+    multiselectable = true;
+
+    @HostBinding("attr.role")
+    role = "tablist";
+
+    @HostBinding("class.panel-group")
+    panelgroupClass = true;
+
 
     @Input()
     closeOthers = true;
