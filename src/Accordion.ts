@@ -4,20 +4,14 @@ import {AccordionGroup} from "./AccordionGroup";
 @Component({
     selector: "accordion",
     styles: [":host{ display: block }"],
+    host: {
+        class: "panel-group",
+        "aria-multiselectable": true,
+        role: "tablist"
+    },
     template: "<ng-content></ng-content>"
 })
 export class Accordion implements AfterContentInit {
-
-    // static stuff
-    @HostBinding("attr.aria-multiselectable")
-    multiselectable = true;
-
-    @HostBinding("attr.role")
-    role = "tablist";
-
-    @HostBinding("class.panel-group")
-    panelgroupClass = true;
-
 
     @Input()
     closeOthers = true;

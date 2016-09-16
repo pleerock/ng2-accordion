@@ -5,6 +5,9 @@ import {AccordionToggle} from "./AccordionToggle";
 @Component({
     selector: "accordion-group",
     styles: [":host { display: block; }"],
+    host: {
+        class: "panel panel-default"
+    },
     template: `
     <div class="panel-heading" role="tab" (click)="checkAndToggle()">
       <h4 class="panel-title">
@@ -24,11 +27,6 @@ import {AccordionToggle} from "./AccordionToggle";
 `
 })
 export class AccordionGroup {
-
-    // static stuff
-    @HostBinding("class")
-    classes = "panel panel-default";
-
 
     @Input()
     heading: string;
