@@ -6,7 +6,7 @@ import {AccordionGroup} from "./AccordionGroup";
     styles: [":host{ display: block }"],
     host: {
         class: "panel-group",
-        "aria-multiselectable": true,
+        "aria-multiselectable": "true",
         role: "tablist"
     },
     template: "<ng-content></ng-content>"
